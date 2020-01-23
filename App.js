@@ -43,8 +43,7 @@ const App: () => React$Node = () => {
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
+                Introduce some number, then try to cut and paste somewhere
               </Text>
               <TextInputMask
                 style={{height: 80, width: 500, color:"purple", backgroundColor:"gray"}}
