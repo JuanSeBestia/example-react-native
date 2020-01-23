@@ -23,6 +23,7 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import TextInputMask from 'react-native-text-input-mask';
 
 const App: () => React$Node = () => {
   return (
@@ -45,26 +46,16 @@ const App: () => React$Node = () => {
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
                 screen and then come back to see your edits.
               </Text>
+              <TextInputMask
+                style={{height: 80, width: 500, color:"purple", backgroundColor:"gray"}}
+                // refInput={ref => { this.input = ref }}
+                onChangeText={(formatted, extracted) => {
+                  console.log(formatted); // +1 (123) 456-78-90
+                  console.log(extracted); // 1234567890
+                }}
+                mask={'+1 ([000]) [000] [00] [00]'}
+              />
             </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
           </View>
         </ScrollView>
       </SafeAreaView>
